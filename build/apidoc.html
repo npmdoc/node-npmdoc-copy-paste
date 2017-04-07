@@ -1,0 +1,635 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/xavi-/node-copy-paste"
+
+    >copy-paste (v1.3.0)</a>
+</h1>
+<h4>A command line utility that allows read/write (i.e copy/paste) access to the system clipboard.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.copy-paste">module copy-paste</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.copy">
+            function <span class="apidocSignatureSpan">copy-paste.</span>copy
+            <span class="apidocSignatureSpan">(text, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.global">
+            function <span class="apidocSignatureSpan">copy-paste.</span>global
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.noConflict">
+            function <span class="apidocSignatureSpan">copy-paste.</span>noConflict
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.paste">
+            function <span class="apidocSignatureSpan">copy-paste.</span>paste
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.silent">
+            function <span class="apidocSignatureSpan">copy-paste.</span>silent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">copy-paste.</span>darwin</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">copy-paste.</span>linux</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">copy-paste.</span>win32</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.copy-paste.darwin">module copy-paste.darwin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.darwin.decode">
+            function <span class="apidocSignatureSpan">copy-paste.darwin.</span>decode
+            <span class="apidocSignatureSpan">(chunks)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.darwin.encode">
+            function <span class="apidocSignatureSpan">copy-paste.darwin.</span>encode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">copy-paste.darwin.</span>copy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">copy-paste.darwin.</span>paste</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.copy-paste.linux">module copy-paste.linux</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.linux.decode">
+            function <span class="apidocSignatureSpan">copy-paste.linux.</span>decode
+            <span class="apidocSignatureSpan">(chunks)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.linux.encode">
+            function <span class="apidocSignatureSpan">copy-paste.linux.</span>encode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">copy-paste.linux.</span>copy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">copy-paste.linux.</span>paste</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.copy-paste.win32">module copy-paste.win32</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.win32.decode">
+            function <span class="apidocSignatureSpan">copy-paste.win32.</span>decode
+            <span class="apidocSignatureSpan">(chunks)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.copy-paste.win32.encode">
+            function <span class="apidocSignatureSpan">copy-paste.win32.</span>encode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">copy-paste.win32.</span>copy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">copy-paste.win32.</span>paste</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.copy-paste" id="apidoc.module.copy-paste">module copy-paste</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.copy" id="apidoc.element.copy-paste.copy">
+        function <span class="apidocSignatureSpan">copy-paste.</span>copy
+        <span class="apidocSignatureSpan">(text, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copy = function (text, callback) {
+	var child = spawn(config.copy.command, config.copy.args);
+
+	var done = (callback ? function() { callback.apply(this, arguments); done = noop; } : noop);
+
+	var err = [];
+
+	child.stdin.on(&#x22;error&#x22;, function (err) { done(err); });
+	child
+		.on(&#x22;exit&#x22;, function() { done(null, text); })
+		.on(&#x22;error&#x22;, function(err) { done(err); })
+		.stderr
+			.on(&#x22;data&#x22;, function(chunk) { err.push(chunk); })
+			.on(&#x22;end&#x22;, function() {
+				if(err.length === 0) { return; }
+				done(new Error(config.decode(err)));
+			})
+	;
+
+	if(text.pipe) { text.pipe(child.stdin); }
+	else {
+		var output, type = Object.prototype.toString.call(text);
+
+		if(type === &#x22;[object String]&#x22;) { output = text; }
+		else if(type === &#x22;[object Object]&#x22;) { output = util.inspect(text, { depth: null }); }
+		else if(type === &#x22;[object Array]&#x22;) { output = util.inspect(text, { depth: null }); }
+		else { output = text.toString(); }
+
+		child.stdin.end(config.encode(output));
+	}
+
+	return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- `require(&#x22;copy-paste&#x22;).global()`:  adds `copy` and `paste` to the global namespace.  Returns an object with `copy` and
+ `paste` as properties.
+
+## Example
+
+```js
+var ncp = require(&#x22;copy-paste&#x22;);
+
+ncp.<span class="apidocCodeKeywordSpan">copy</span>(&#x27;some text&#x27;, function () {
+  // complete...
+})
+```
+
+## Getting node-copy-paste
+
+The easiest way to get node-copy-paste is with [npm](http://npmjs.org/):
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.global" id="apidoc.element.copy-paste.global">
+        function <span class="apidocSignatureSpan">copy-paste.</span>global
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">global = function () {
+	GLOBAL.copy = exports.copy;
+	GLOBAL.paste = exports.paste;
+
+	return exports;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+When `require(&#x22;copy-paste&#x22;)` is executed, an object with the following properties is returned:
+
+- `copy(text[, callback])`: asynchronously replaces the current contents of the clip board with `text`.  Takes either a string,
+array, object, or readable stream.  Returns the same value passed in. Optional callback will fire when the copy operation is complete
+.
+- `paste([callback])`: if no callback is provided, `paste` synchronously returns the current contents of the system clip board.
+Otherwise, the contents of the system clip board are passed to the callback as the second parameter.
+
+	**Note**: The synchronous version of `paste` is not always availabled.  Unfortunately, I&#x27;m having a hard time finding a synchronous
+ version of `child_process.exec` that consistently works on all platforms, especially windows.  An error message is shown if the
+ synchronous version of `paste` is used on an unsupported platform.  That said, the asynchronous version of `paste` is always available
+.
+
+- `require(&#x22;copy-paste&#x22;).<span class="apidocCodeKeywordSpan">global</span>()`:  adds `copy` and `paste` to the global
+namespace.  Returns an object with `copy` and `paste` as properties.
+
+## Example
+
+```js
+var ncp = require(&#x22;copy-paste&#x22;);
+
+ncp.copy(&#x27;some text&#x27;, function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.noConflict" id="apidoc.element.copy-paste.noConflict">
+        function <span class="apidocSignatureSpan">copy-paste.</span>noConflict
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noConflict = function () {
+	throw new Error(&#x22;DEPRECATED: copy-paste no longer adds global variables by default.&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.paste" id="apidoc.element.copy-paste.paste">
+        function <span class="apidocSignatureSpan">copy-paste.</span>paste
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">paste = function (callback) {
+	if(execSync &#x26;&#x26; !callback) { return config.decode(execSync(pasteCommand)); }
+	else if(callback) {
+		var child = spawn(config.paste.command, config.paste.args);
+
+		var done = callback &#x26;&#x26; function() { callback.apply(this, arguments); done = noop; };
+
+		var data = [], err = [];
+
+		child.on(&#x22;error&#x22;, function(err) { done(err); });
+		child.stdout
+			.on(&#x22;data&#x22;, function(chunk) { data.push(chunk); })
+			.on(&#x22;end&#x22;, function() { done(null, config.decode(data)); })
+		;
+		child.stderr
+			.on(&#x22;data&#x22;, function(chunk) { err.push(chunk); })
+			.on(&#x22;end&#x22;, function() {
+				if(err.length === 0) { return; }
+
+				done(new Error(config.decode(err)));
+			})
+		;
+	} else {
+		throw new Error(&#x22;A synchronous version of paste is not supported on this platform.&#x22;);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.silent" id="apidoc.element.copy-paste.silent">
+        function <span class="apidocSignatureSpan">copy-paste.</span>silent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">silent = function () {
+	throw new Error(&#x22;DEPRECATED: copy-paste is now always silent.&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.copy-paste.darwin" id="apidoc.module.copy-paste.darwin">module copy-paste.darwin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.darwin.decode" id="apidoc.element.copy-paste.darwin.decode">
+        function <span class="apidocSignatureSpan">copy-paste.darwin.</span>decode
+        <span class="apidocSignatureSpan">(chunks)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (chunks) {
+	if(!Array.isArray(chunks)) { chunks = [ chunks ]; }
+
+	return Buffer.concat(chunks).toString(&#x22;utf8&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	child
+		.on(&#x22;exit&#x22;, function() { done(null, text); })
+		.on(&#x22;error&#x22;, function(err) { done(err); })
+		.stderr
+			.on(&#x22;data&#x22;, function(chunk) { err.push(chunk); })
+			.on(&#x22;end&#x22;, function() {
+				if(err.length === 0) { return; }
+				done(new Error(config.<span class="apidocCodeKeywordSpan">decode</span>(err)));
+			})
+	;
+
+	if(text.pipe) { text.pipe(child.stdin); }
+	else {
+		var output, type = Object.prototype.toString.call(text);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.darwin.encode" id="apidoc.element.copy-paste.darwin.encode">
+        function <span class="apidocSignatureSpan">copy-paste.darwin.</span>encode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (str) { return new Buffer(str, &#x22;utf8&#x22;); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		var output, type = Object.prototype.toString.call(text);
+
+		if(type === &#x22;[object String]&#x22;) { output = text; }
+		else if(type === &#x22;[object Object]&#x22;) { output = util.inspect(text, { depth: null }); }
+		else if(type === &#x22;[object Array]&#x22;) { output = util.inspect(text, { depth: null }); }
+		else { output = text.toString(); }
+
+		child.stdin.end(config.<span class="apidocCodeKeywordSpan">encode</span>(output));
+	}
+
+	return text;
+};
+
+var pasteCommand = [ config.paste.command ].concat(config.paste.args).join(&#x22; &#x22;);
+exports.paste = function(callback) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.copy-paste.linux" id="apidoc.module.copy-paste.linux">module copy-paste.linux</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.linux.decode" id="apidoc.element.copy-paste.linux.decode">
+        function <span class="apidocSignatureSpan">copy-paste.linux.</span>decode
+        <span class="apidocSignatureSpan">(chunks)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (chunks) {
+	if(!Array.isArray(chunks)) { chunks = [ chunks ]; }
+
+	return Buffer.concat(chunks).toString(&#x22;utf8&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	child
+		.on(&#x22;exit&#x22;, function() { done(null, text); })
+		.on(&#x22;error&#x22;, function(err) { done(err); })
+		.stderr
+			.on(&#x22;data&#x22;, function(chunk) { err.push(chunk); })
+			.on(&#x22;end&#x22;, function() {
+				if(err.length === 0) { return; }
+				done(new Error(config.<span class="apidocCodeKeywordSpan">decode</span>(err)));
+			})
+	;
+
+	if(text.pipe) { text.pipe(child.stdin); }
+	else {
+		var output, type = Object.prototype.toString.call(text);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.linux.encode" id="apidoc.element.copy-paste.linux.encode">
+        function <span class="apidocSignatureSpan">copy-paste.linux.</span>encode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (str) { return new Buffer(str, &#x22;utf8&#x22;); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		var output, type = Object.prototype.toString.call(text);
+
+		if(type === &#x22;[object String]&#x22;) { output = text; }
+		else if(type === &#x22;[object Object]&#x22;) { output = util.inspect(text, { depth: null }); }
+		else if(type === &#x22;[object Array]&#x22;) { output = util.inspect(text, { depth: null }); }
+		else { output = text.toString(); }
+
+		child.stdin.end(config.<span class="apidocCodeKeywordSpan">encode</span>(output));
+	}
+
+	return text;
+};
+
+var pasteCommand = [ config.paste.command ].concat(config.paste.args).join(&#x22; &#x22;);
+exports.paste = function(callback) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.copy-paste.win32" id="apidoc.module.copy-paste.win32">module copy-paste.win32</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.win32.decode" id="apidoc.element.copy-paste.win32.decode">
+        function <span class="apidocSignatureSpan">copy-paste.win32.</span>decode
+        <span class="apidocSignatureSpan">(chunks)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (chunks) {
+	if(!Array.isArray(chunks)) { chunks = [ chunks ]; }
+
+	var b64 = iconv.decode(Buffer.concat(chunks), &#x22;cp437&#x22;);
+	b64 = b64.substr(0, b64.length - 2); // Chops off extra &#x22;\r\n&#x22;
+
+    // remove bom and decode
+    var result = new Buffer(b64, &#x22;base64&#x22;).slice(3).toString(&#x22;utf-8&#x22;);
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	child
+		.on(&#x22;exit&#x22;, function() { done(null, text); })
+		.on(&#x22;error&#x22;, function(err) { done(err); })
+		.stderr
+			.on(&#x22;data&#x22;, function(chunk) { err.push(chunk); })
+			.on(&#x22;end&#x22;, function() {
+				if(err.length === 0) { return; }
+				done(new Error(config.<span class="apidocCodeKeywordSpan">decode</span>(err)));
+			})
+	;
+
+	if(text.pipe) { text.pipe(child.stdin); }
+	else {
+		var output, type = Object.prototype.toString.call(text);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.copy-paste.win32.encode" id="apidoc.element.copy-paste.win32.encode">
+        function <span class="apidocSignatureSpan">copy-paste.win32.</span>encode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (str) { return iconv.encode(str, &#x22;utf16le&#x22;); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		var output, type = Object.prototype.toString.call(text);
+
+		if(type === &#x22;[object String]&#x22;) { output = text; }
+		else if(type === &#x22;[object Object]&#x22;) { output = util.inspect(text, { depth: null }); }
+		else if(type === &#x22;[object Array]&#x22;) { output = util.inspect(text, { depth: null }); }
+		else { output = text.toString(); }
+
+		child.stdin.end(config.<span class="apidocCodeKeywordSpan">encode</span>(output));
+	}
+
+	return text;
+};
+
+var pasteCommand = [ config.paste.command ].concat(config.paste.args).join(&#x22; &#x22;);
+exports.paste = function(callback) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
