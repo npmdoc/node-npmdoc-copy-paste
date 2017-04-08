@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/copy-paste.png?downloads=true)](https://www.npmjs.com/package/copy-paste)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-copy-paste/build/screenCapture.buildNpmdoc.browser.%2Fhome%2Ftravis%2Fbuild%2Fnpmdoc%2Fnode-npmdoc-copy-paste%2Ftmp%2Fbuild%2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-copy-paste/build/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-copy-paste/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-copy-paste%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-copy-paste/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-copy-paste/build/screenCapture.npmPackageListing.svg)
 
